@@ -41,15 +41,25 @@ function CardFavoriteRecipes() {
     setArrayFavorite(arrayFiltered);
   };
 
-  const handleClick = (param) => {
-    if (param === 'Meals') {
-      const filtered = arrayFavorite.filter((element) => element.type !== 'drink');
-      setArrayFavorite(filtered);
-    } else if (param === 'Drinks') {
-      const filtered = arrayFavorite.filter((element) => element.type !== 'meal');
+  // const handleClick = (param) => {
+  //   if (param === 'Meals') {
+  //     setArrayFavorite(arrayFavorite.filter((element) => element.type === 'meal'));
+  //   } if (param === 'Drinks') {
+  //     setArrayFavorite(arrayFavorite.filter((element) => element.type === 'drink'));
+  //   } if (param === 'All') {
+  //     setArrayFavorite(filteredArray);
+  //   }
+  // };
 
-      setArrayFavorite(filtered);
-    } else {
+  const handleClick = (param) => {
+    switch (param) {
+    case 'Meals':
+      setArrayFavorite(filteredArray.filter((recipe) => recipe.type === 'meal'));
+      break;
+    case 'Drinks':
+      setArrayFavorite(filteredArray.filter((recipe) => recipe.type === 'drink'));
+      break;
+    default:
       setArrayFavorite(filteredArray);
     }
   };
