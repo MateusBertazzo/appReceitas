@@ -133,7 +133,7 @@ function MealDetails({ pathname }) {
                   gyroscope;
                   picture-in-picture"
                 allowFullScreen
-                src={ strYoutube }
+                src={ strYoutube.replace('watch?v=', 'embed/') }
                 data-testid="video"
               >
                 Click me
